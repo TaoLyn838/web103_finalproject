@@ -1,5 +1,10 @@
 import express from 'express'
-import { register, login } from '../controllers/AuthController.js'
+import {
+  register,
+  login,
+  githubLogin,
+  githubCallback,
+} from '../controllers/AuthController.js'
 import { authenticateToken } from '../middleware/AuthMiddleware.js'
 
 const router = express.Router()
@@ -15,5 +20,7 @@ function authenticate(req, res) {
 router.post('/register', register)
 router.post('/login', login)
 router.get('/protected', authenticateToken, authenticate)
+// router.get('/github', githubLogin)
+// router.get('/github/callback', githubCallback)
 
 export default router
