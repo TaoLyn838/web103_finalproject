@@ -3,7 +3,7 @@
 export const reserveThisTimeSlot = async (timeSlotId) => {
   try {
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/timeslot/book/${timeSlotId}`,
+      `${process.env.REACT_APP_API_BASE_URL}/api/timeslot/book/${timeSlotId}`,
       {
         method: 'POST',
         headers: {
@@ -29,7 +29,7 @@ export const reserveThisTimeSlot = async (timeSlotId) => {
 export const cancelThisTimeSlot = async (timeSlotId, bookingId) => {
   try {
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/timeslot/cancel/${timeSlotId}`,
+      `${process.env.REACT_APP_API_BASE_URL}/api/timeslot/cancel/${timeSlotId}`,
       {
         method: 'POST',
         headers: {
@@ -45,7 +45,7 @@ export const cancelThisTimeSlot = async (timeSlotId, bookingId) => {
     }
 
     const response1 = await fetch(
-      `${process.env.API_BASE_URL}/api/booking/${bookingId}`,
+      `${process.env.REACT_APP_API_BASE_URL}/api/booking/${bookingId}`,
       {
         method: 'DELETE',
       }
@@ -70,7 +70,7 @@ export const cancelThisTimeSlot = async (timeSlotId, bookingId) => {
 export const getATimeSlotById = async (tid) => {
   try {
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/timeslot/${tid}`
+      `${process.env.REACT_APP_API_BASE_URL}/api/timeslot/${tid}`
     )
     if (!response.ok) {
       // console.log("having error");
@@ -87,10 +87,12 @@ export const getATimeSlotById = async (tid) => {
 
 // Get a timeslot of users filtering by date and id
 export const getTimeslotsOfEmployeeByIdAndDate = async (eid, date) => {
-  console.log(`${process.env.API_BASE_URL}/api/timeslot/${eid}/?date=${date}`)
+  console.log(
+    `${process.env.REACT_APP_API_BASE_URL}/api/timeslot/${eid}/?date=${date}`
+  )
   try {
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/timeslot/employee/${eid}/?date=${date}`
+      `${process.env.REACT_APP_API_BASE_URL}/api/timeslot/employee/${eid}/?date=${date}`
     )
     if (!response.ok) {
       // console.log("having error");

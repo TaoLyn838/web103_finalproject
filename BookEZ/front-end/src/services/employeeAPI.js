@@ -4,7 +4,7 @@
 export const getAnEmployeeById = async (eid) => {
   try {
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/employee/${eid}`
+      `${process.env.REACT_APP_API_BASE_URL}/api/employee/${eid}`
     )
     if (!response.ok) {
       // console.log("having error");
@@ -24,7 +24,7 @@ export const getAnEmployeeById = async (eid) => {
 export const getTimeSlotOfAnEmployeeByEmployeeId = async (eid) => {
   try {
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/timeslot/free/${eid}`
+      `${process.env.REACT_APP_API_BASE_URL}/api/timeslot/free/${eid}`
     )
     if (!response.ok) {
       // console.log("having error");
@@ -43,13 +43,16 @@ export const getTimeSlotOfAnEmployeeByEmployeeId = async (eid) => {
 // Adding a booking to booking database
 export const bookThisTimeslot = async (timeSlotBody) => {
   try {
-    const response = await fetch(`${process.env.API_BASE_URL}/api/booking`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(timeSlotBody),
-    })
+    const response = await fetch(
+      `${process.env.REACT_APP_API_BASE_URL}/api/booking`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(timeSlotBody),
+      }
+    )
     if (!response.ok) {
       throw new Error(`Error booking this timeslot: ${response.statusText}`)
     }

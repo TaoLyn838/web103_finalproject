@@ -3,7 +3,9 @@
 // Display list of Salons in homepage
 export const getAllSalons = async () => {
   try {
-    const response = await fetch(`${process.env.API_BASE_URL}/api/salon`)
+    const response = await fetch(
+      `${process.env.REACT_APP_API_BASE_URL}/api/salon`
+    )
     if (!response.ok) {
       // console.log("having error");
       throw new Error(`Error fetching cars: ${response.statusText}`)
@@ -21,7 +23,7 @@ export const getAllSalons = async () => {
 export const getSalonById = async (salonId) => {
   try {
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/salon/${salonId}`
+      `${process.env.REACT_APP_API_BASE_URL}/api/salon/${salonId}`
     )
     if (!response.ok) {
       throw new Error(`Error fetching salon ${salonId}: ${response.statusText}`)
@@ -38,7 +40,7 @@ export const getSalonById = async (salonId) => {
 export const getEmployeesBySalonId = async (salonId) => {
   try {
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/employee/salon/${salonId}`
+      `${process.env.REACT_APP_API_BASE_URL}/api/employee/salon/${salonId}`
     )
     if (!response.ok) {
       throw new Error(

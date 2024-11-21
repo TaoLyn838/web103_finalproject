@@ -4,7 +4,9 @@
 // Get an user's details (username, fullname, email, phone numbers)
 export const getUserInfoById = async (uid) => {
   try {
-    const response = await fetch(`${process.env.API_BASE_URL}/api/user/${uid}`)
+    const response = await fetch(
+      `${process.env.REACT_APP_API_BASE_URL}/api/user/${uid}`
+    )
     if (!response.ok) {
       // console.log("having error");
       throw new Error(`Error fetching user details: ${response.statusText}`)
@@ -22,7 +24,7 @@ export const getUserInfoById = async (uid) => {
 export const submitEdittedInfo = async (timeSlotId, userInfoBody) => {
   try {
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/user/${timeSlotId}`,
+      `${process.env.REACT_APP_API_BASE_URL}/api/user/${timeSlotId}`,
       {
         method: 'PUT',
         headers: {
@@ -48,7 +50,7 @@ export const submitEdittedInfo = async (timeSlotId, userInfoBody) => {
 export const getAllUpcomingAppointments = async (uid) => {
   try {
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/booking/user/${uid}`
+      `${process.env.REACT_APP_API_BASE_URL}/api/booking/user/${uid}`
     )
     // console.log(response);
     if (!response.ok) {
