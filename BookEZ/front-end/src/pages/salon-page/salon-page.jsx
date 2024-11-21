@@ -10,8 +10,8 @@ import PlaceIcon from '@mui/icons-material/Place'
 import MailRoundedIcon from '@mui/icons-material/MailRounded'
 import PhoneInTalkRoundedIcon from '@mui/icons-material/PhoneInTalkRounded'
 
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress'
+import Box from '@mui/material/Box'
 
 const SalonPage = () => {
   let { id } = useParams()
