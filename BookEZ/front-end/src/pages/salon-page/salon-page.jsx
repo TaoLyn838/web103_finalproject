@@ -10,8 +10,8 @@ import PlaceIcon from '@mui/icons-material/Place'
 import MailRoundedIcon from '@mui/icons-material/MailRounded'
 import PhoneInTalkRoundedIcon from '@mui/icons-material/PhoneInTalkRounded'
 
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress'
+import Box from '@mui/material/Box'
 
 const SalonPage = () => {
   let { id } = useParams()
@@ -80,7 +80,7 @@ const SalonPage = () => {
     // console.log(process.env.GGLOCATIONAPIKEY);
     const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
       salonFullAddress
-    )}&key=${process.env.GGLOCATIONAPIKEY}`
+    )}&key=${process.env.REACT_APP_GGLOCATIONAPIKEY}`
 
     fetch(geocodeUrl)
       .then((response) => response.json())
